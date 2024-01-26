@@ -36,3 +36,19 @@ vim.keymap.set("n", "<C-h>", "<C-w>h")
 vim.keymap.set("n", "<C-j>", "<C-w>j")
 vim.keymap.set("n", "<C-k>", "<C-w>k")
 vim.keymap.set("n", "<C-l>", "<C-w>l")
+
+-- WIndows resize
+vim.keymap.set("n", "<C-Left>", "<C-w><")
+vim.keymap.set("n", "<C-Right>", "<C-w>>")
+vim.keymap.set("n", "<C-Up>", "<C-w>+")
+vim.keymap.set("n", "<C-Down>", "<C-w>-")
+
+-- Terminal
+vim.keymap.set("n", "<leader>t", "<cmd>ToggleTerm size=10 direction=horizontal<cr>")
+vim.keymap.set('t', '<esc>', [[<C-\><C-n>]])
+vim.keymap.set('t', 'jk', [[<C-\><C-n>]])
+vim.keymap.set('t', '<C-h>', [[<Cmd>wincmd h<CR>]])
+vim.keymap.set('t', '<C-j>', [[<Cmd>wincmd j<CR>]])
+vim.keymap.set('t', '<C-k>', [[<Cmd>wincmd k<CR>]])
+vim.keymap.set('t', '<C-l>', [[<Cmd>wincmd l<CR>]])
+vim.keymap.set('t', '<C-w>', [[<C-\><C-n><C-w>]])
