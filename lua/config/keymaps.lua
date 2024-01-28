@@ -31,7 +31,8 @@ vim.keymap.set("v", ">", ">gv")
 
 -- Neo tree
 vim.keymap.set("n", "<leader>e", ":Neotree filesystem reveal toggle left<CR>")
-vim.keymap.set("n", "<leader><S-e>", ":Neotree git_status<CR>")
+vim.keymap.set("n", "<leader>g", ":Neotree git_status<CR>")
+vim.keymap.set("n", "<leader>b", ":Neotree buffers<CR>")
 
 -- LSP
 vim.keymap.set("n", "<leader>n", vim.diagnostic.open_float)
@@ -58,7 +59,7 @@ vim.keymap.set("n", "<C-Up>", "<C-w>+")
 vim.keymap.set("n", "<C-Down>", "<C-w>-")
 
 -- Terminal
-vim.keymap.set("n", "<leader>t", "<cmd>ToggleTerm size=20tdirection=horizontal<cr>")
+vim.keymap.set("n", "<leader>t", "<cmd>ToggleTerm size=20 direction=horizontal<cr>")
 vim.keymap.set("t", "<esc>", [[<C-\><C-n>]])
 vim.keymap.set("t", "jk", [[<C-\><C-n>]])
 vim.keymap.set("t", "<C-h>", [[<Cmd>wincmd h<CR>]])
