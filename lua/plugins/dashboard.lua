@@ -49,6 +49,12 @@ return {
 						key = "g",
 					},
 					{
+						action = "DiffviewOpen",
+						desc = " Show git diff",
+						icon = " ",
+						key = "d",
+					},
+					{
 						action = "Lazy",
 						desc = " Lazy",
 						icon = "󰒲 ",
