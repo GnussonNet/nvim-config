@@ -30,11 +30,6 @@ return {
           },
         },
       },
-      source_selector = {
-        winbar = true,
-        content_layout = "center",
-      },
-
       event_handlers = {
         {
           event = "file_opened",

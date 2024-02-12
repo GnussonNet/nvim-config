@@ -29,6 +29,9 @@ vim.keymap.set("v", "<leader>d", '"_d')
 vim.keymap.set("v", "<", "<gv")
 vim.keymap.set("v", ">", ">gv")
 
+-- Show marker for 80 characters
+vim.opt.colorcolumn = "80"
+
 -- Neo tree
 vim.keymap.set("n", "<leader>e", ":Neotree filesystem reveal toggle left<CR>")
 vim.keymap.set("n", "<leader>g", ":Neotree git_status<CR>")
@@ -45,6 +48,7 @@ vim.keymap.set("n", "<leader>gf", vim.lsp.buf.format, {})
 vim.keymap.set("n", "<Tab>", ":bnext<CR>")
 vim.keymap.set("n", "<S-Tab>", ":bprev<CR>")
 vim.keymap.set("n", "<leader>bw", ":Bdelete<CR>")
+vim.keymap.set("n", "<leader>bW", ":bufdo Bdelete<CR>")
 
 -- Windows
 vim.keymap.set("n", "<C-h>", "<C-w>h")
