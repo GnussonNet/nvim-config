@@ -32,6 +32,7 @@ return {
     event = "InsertEnter",
     config = function()
       local cmp = require("cmp")
+      local kind = cmp.lsp.CompletionItemKind
       local lspkind = require("lspkind")
       require("luasnip.loaders.from_vscode").load()
 
@@ -62,7 +63,11 @@ return {
           ["<C-f>"] = cmp.mapping.scroll_docs(4),
           ["<C-Space>"] = cmp.mapping.complete(),
           ["<C-e>"] = cmp.mapping.abort(),
-          ["<CR>"] = cmp.mapping.confirm({ select = false }), -- Accept currently selected item. Set `select` to `false` to only confirm explicitly selected items.
+          ["<CR>"] = cmp.mapping(function()
+            if not cmp.confirm({ select = false }) then
+              require("pairs.enter").type()
+            end
+          end),
         }),
         sources = cmp.config.sources({
           { name = "copilot",  group_index = 2 },
@@ -75,6 +80,13 @@ return {
           ghost_text = true,
         },
       })
+      cmp.event:on("confirm_done", function(event)
+        local item = event.entry:get_completion_item()
+        local parensDisabled = item.data and item.data.funcParensDisabled or false
+        if not parensDisabled and (item.kind == kind.Method or item.kind == kind.Function) then
+          require("pairs.bracket").type_left("(")
+        end
+      end)
     end,
   },
 }
