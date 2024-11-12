@@ -9,7 +9,6 @@ return {
     "williamboman/mason-lspconfig.nvim",
     config = function()
       require("mason-lspconfig").setup({
-        ensure_installed = { "lua_ls", "tsserver", "pyright" },
         automatic_installation = true,
       })
     end,
@@ -24,7 +23,6 @@ return {
         ensure_installed = {
           "prettier",
           "eslint_d",
-          "black",
         },
       })
     end,
@@ -38,7 +36,6 @@ return {
         sources = {
           null_ls.builtins.formatting.prettier,
           null_ls.builtins.diagnostics.eslint_d,
-          null_ls.builtins.formatting.black,
         },
       })
     end,
@@ -60,9 +57,6 @@ return {
         },
       })
       lspconfig.tsserver.setup({
-        capabilities = capabilities,
-      })
-      lspconfig.pyright.setup({
         capabilities = capabilities,
       })
     end,

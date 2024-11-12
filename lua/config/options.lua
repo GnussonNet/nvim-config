@@ -2,6 +2,10 @@ vim.g.loaded_netrw = 1
 vim.g.loaded_netrwPlugin = 1
 vim.o.number = true
 
+vim.diagnostic.config({
+  update_in_insert = false,
+})
+
 vim.g.mapleader = " "
 vim.g.maplocalleader = "\\"
 
@@ -49,7 +53,7 @@ opt.sidescrolloff = 8    -- Columns of context
 opt.signcolumn = "yes"   -- Always show the signcolumn, otherwise it would shift the text each time
 opt.smartcase = true     -- Don't ignore case with capitals
 opt.smartindent = true   -- Insert indents automatically
-opt.spelllang = { "en" }
+opt.spelllang = { "en", "sv" }
 opt.splitbelow = true    -- Put new windows below current
 opt.splitkeep = "screen"
 opt.splitright = true    -- Put new windows right of current
