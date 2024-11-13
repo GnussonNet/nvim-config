@@ -30,6 +30,9 @@ return {
           },
         },
       },
+      window = {
+        position = "right",
+      },
       event_handlers = {
         {
           event = "file_opened",

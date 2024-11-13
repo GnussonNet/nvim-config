@@ -33,7 +33,7 @@ vim.keymap.set("v", ">", ">gv")
 vim.opt.colorcolumn = "80"
 
 -- Neo tree
-vim.keymap.set("n", "<leader>e", ":Neotree filesystem reveal toggle left<CR>")
+vim.keymap.set("n", "<leader>e", ":Neotree filesystem reveal toggle<CR>")
 vim.keymap.set("n", "<leader>g", ":Neotree git_status<CR>")
 vim.keymap.set("n", "<leader>b", ":Neotree buffers<CR>")
 
