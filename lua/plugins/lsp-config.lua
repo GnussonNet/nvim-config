@@ -9,7 +9,7 @@ return {
     "williamboman/mason-lspconfig.nvim",
     config = function()
       require("mason-lspconfig").setup({
-        automatic_installation = true,
+        automatic_installation = false,
       })
     end,
   },
@@ -23,19 +23,23 @@ return {
         ensure_installed = {
           "prettier",
           "eslint_d",
+          "lua-language-server"
         },
       })
     end,
   },
   {
     "nvimtools/none-ls.nvim",
+    dependencies = {
+      "nvimtools/none-ls-extras.nvim",
+    },
     config = function()
       local null_ls = require("null-ls")
 
       null_ls.setup({
         sources = {
           null_ls.builtins.formatting.prettier,
-          null_ls.builtins.diagnostics.eslint_d,
+          require("none-ls.diagnostics.eslint_d")
         },
       })
     end,
@@ -59,6 +63,17 @@ return {
       lspconfig.tsserver.setup({
         capabilities = capabilities,
       })
+      lspconfig.jdtls.setup({})
     end,
   },
+  {
+    "nvim-java/nvim-java",
+    config = function()
+      require("java").setup({
+        jdk = {
+          auto_install = false,
+        }
+      })
+    end,
+  }
 }

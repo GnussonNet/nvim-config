@@ -77,7 +77,7 @@ return {
           { name = "luasnip",  group_index = 2 }, -- For luasnip users.
         }),
         experimental = {
-          ghost_text = true,
+          ghost_text = false,
         },
       })
       cmp.event:on("confirm_done", function(event)
