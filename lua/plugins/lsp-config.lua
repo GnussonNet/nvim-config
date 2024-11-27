@@ -1,12 +1,14 @@
 return {
   {
     "williamboman/mason.nvim",
+    event = "VeryLazy",
     config = function()
       require("mason").setup({})
     end,
   },
   {
     "williamboman/mason-lspconfig.nvim",
+    event = "VeryLazy",
     config = function()
       require("mason-lspconfig").setup({
         automatic_installation = false,
@@ -15,6 +17,7 @@ return {
   },
   {
     "WhoIsSethDaniel/mason-tool-installer.nvim",
+    event = "VeryLazy",
     requires = {
       "williamboman/mason.nvim",
     },
@@ -23,13 +26,17 @@ return {
         ensure_installed = {
           "prettier",
           "eslint_d",
-          "lua-language-server"
+          "lua-language-server",
+          "typescript-language-server",
+          "tailwindcss-language-server",
+          "html",
         },
       })
     end,
   },
   {
     "nvimtools/none-ls.nvim",
+    event = "VeryLazy",
     dependencies = {
       "nvimtools/none-ls-extras.nvim",
     },
@@ -46,6 +53,7 @@ return {
   },
   {
     "neovim/nvim-lspconfig",
+    event = "VeryLazy",
     config = function()
       local lspconfig = require("lspconfig")
       local capabilities = require("cmp_nvim_lsp").default_capabilities()
@@ -60,20 +68,23 @@ return {
           },
         },
       })
-      lspconfig.tsserver.setup({
+      lspconfig.ts_ls.setup({
+        capabilities = capabilities,
+      })
+      lspconfig.tailwindcss.setup({
         capabilities = capabilities,
       })
       lspconfig.jdtls.setup({})
     end,
   },
-  {
-    "nvim-java/nvim-java",
-    config = function()
-      require("java").setup({
-        jdk = {
-          auto_install = false,
-        }
-      })
-    end,
-  }
+  -- {
+  --   "nvim-java/nvim-java",
+  --   config = function()
+  --     require("java").setup({
+  --       jdk = {
+  --         auto_install = false,
+  --       }
+  --     })
+  --   end,
+  -- }
 }

@@ -1,6 +1,7 @@
 return {
   {
     "hrsh7th/cmp-path",
+    event = "InsertEnter",
   },
   {
     "onsails/lspkind.nvim",
@@ -17,6 +18,7 @@ return {
   },
   {
     "L3MON4D3/LuaSnip",
+    event = "InsertEnter",
     version = "v2.*",
     dependencies = {
       "saadparwaiz1/cmp_luasnip",
@@ -25,11 +27,11 @@ return {
   },
   {
     "hrsh7th/nvim-cmp",
+    event = "InsertEnter",
     dependencies = {
       "hrsh7th/cmp-nvim-lsp",
       "hrsh7th/cmp-path",
     },
-    event = "InsertEnter",
     config = function()
       local cmp = require("cmp")
       local kind = cmp.lsp.CompletionItemKind

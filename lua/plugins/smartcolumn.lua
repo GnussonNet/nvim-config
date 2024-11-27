@@ -1,5 +1,6 @@
 return {
   "m4xshen/smartcolumn.nvim",
+  event = 'VeryLazy',
   config = function()
     require("smartcolumn").setup({
       disabled_filetypes = {
