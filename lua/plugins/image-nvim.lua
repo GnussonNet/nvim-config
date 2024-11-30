@@ -1,6 +1,6 @@
 return {
   "3rd/image.nvim",
-  event = "VimEnter",
+  event = "VeryLazy",
   config = function()
     require("image").setup({
       backend = "kitty",
