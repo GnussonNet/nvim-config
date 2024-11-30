@@ -16,7 +16,7 @@ return {
           '%=', --[[ add your center compoentnts here in place of this comment ]]
         },
         lualine_x = {},
-        lualine_y = { 'filetype', 'progress', 'location' },
+        lualine_y = { 'filetype', 'progress', 'location', "require'wttr'.text" },
         lualine_z = {
           { "os.date('%x %X')", separator = { right = '' }, left_padding = 2 },
         },
