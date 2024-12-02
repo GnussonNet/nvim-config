@@ -1,10 +1,10 @@
 return {
   "NvChad/nvim-colorizer.lua",
-  event = "VeryLazy",
+  event = "BufReadPre",
 
   config = function()
     require("colorizer").setup({
-      filetypes = { "*" },
+      filetypes = { "*", "!cmp_menu" },
       user_default_options = {
         RGB = true,          -- #RGB hex codes
         RRGGBB = true,       -- #RRGGBB hex codes
@@ -22,7 +22,7 @@ return {
         tailwind = true,                                 -- Enable tailwind colors
         -- parsers can contain values used in |user_default_options|
         sass = { enable = false, parsers = { "css" }, }, -- Enable sass colors
-        virtualtext = "■",
+        virtualtext = "󱓻",
         -- update color values even if buffer is not focused
         -- example use: cmp_menu, cmp_docs
         always_update = false
