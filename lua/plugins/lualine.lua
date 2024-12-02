@@ -7,7 +7,7 @@ return {
       options = {
         component_separators = '',
         section_separators = { left = '', right = '' },
-        disabled_filetypes = { 'dashboard', 'neo-tree' },
+        disabled_filetypes = { 'dashboard' },
       },
       sections = {
         lualine_a = { { 'mode', separator = { left = '' }, right_padding = 2 } },
