@@ -17,5 +17,10 @@ sudo apt install build-essential
 
 ## Tailwind
 ``` bash
-npm i -g tailwindcss-language-server neovim
+npm i -g tailwindcss-language-server neovim prettier eslint_d
+```
+
+## Ripgrep
+``` bash
+sudo apt-get install ripgrep
 ```
