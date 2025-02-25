@@ -12,7 +12,7 @@ return {
     config = function()
       require("mason-lspconfig").setup({
         automatic_installation = false,
-        ensure_installed = { "lua_ls", "tailwindcss", "ts_ls", "html", "cssls", "erlang_ls" },
+        ensure_installed = { "lua_ls", "tailwindcss", "ts_ls", "html", "cssls" },
       })
     end,
   },
@@ -22,7 +22,8 @@ return {
       require("mason-tool-installer").setup({
         ensure_installed = {
           "prettier",
-          "eslint_d"
+          "eslint_d",
+          "erlang-ls"
         },
       })
     end,
@@ -73,7 +74,7 @@ return {
       lspconfig.cssls.setup({
         capabilities = capabilities,
       })
-      lspconfig.erlang_ls.setup({
+      lspconfig.erlangls.setup({
         capabilities = capabilities,
       })
     end,
