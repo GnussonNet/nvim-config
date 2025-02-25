@@ -12,24 +12,17 @@ return {
     config = function()
       require("mason-lspconfig").setup({
         automatic_installation = false,
+        ensure_installed = { "lua_ls", "tailwindcss", "ts_ls", "html", "cssls", "erlang_ls" },
       })
     end,
   },
   {
     "WhoIsSethDaniel/mason-tool-installer.nvim",
-    event = "VeryLazy",
-    requires = {
-      "williamboman/mason.nvim",
-    },
     config = function()
       require("mason-tool-installer").setup({
         ensure_installed = {
           "prettier",
-          "eslint_d",
-          "lua-language-server",
-          "typescript-language-server",
-          "tailwindcss-language-server",
-          "html",
+          "eslint_d"
         },
       })
     end,
@@ -74,17 +67,15 @@ return {
       lspconfig.tailwindcss.setup({
         capabilities = capabilities,
       })
-      lspconfig.jdtls.setup({})
+      lspconfig.html.setup({
+        capabilities = capabilities,
+      })
+      lspconfig.cssls.setup({
+        capabilities = capabilities,
+      })
+      lspconfig.erlang_ls.setup({
+        capabilities = capabilities,
+      })
     end,
   },
-  -- {
-  --   "nvim-java/nvim-java",
-  --   config = function()
-  --     require("java").setup({
-  --       jdk = {
-  --         auto_install = false,
-  --       }
-  --     })
-  --   end,
-  -- }
 }
