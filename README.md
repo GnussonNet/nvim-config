@@ -24,3 +24,8 @@ npm i -g tailwindcss-language-server neovim prettier eslint_d
 ``` bash
 sudo apt-get install ripgrep
 ```
+
+## Erlang
+``` bash
+brew install erlang rebar3
+```
