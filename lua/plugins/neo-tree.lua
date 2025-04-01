@@ -43,6 +43,7 @@ return {
       },
       window = {
         position = "right",
+        title = "",
         mappings = {
           ["P"] = { "toggle_preview", config = { use_float = true, use_image_nvim = true } },
         }
@@ -57,5 +58,8 @@ return {
         },
       },
     })
+    vim.cmd([[highlight NeoTreeNormal guibg=#0a0d11]])
+    vim.cmd([[highlight NeoTreeNormalNC guibg=#0a0d11]])
+    vim.cmd([[highlight NeoTreeNormal guibg=#0a0d11]])
   end,
 }

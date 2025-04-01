@@ -41,6 +41,7 @@ vim.keymap.set("n", "[d", vim.diagnostic.goto_prev)
 vim.keymap.set("n", "]d", vim.diagnostic.goto_next)
 vim.keymap.set("n", "<leader>q", vim.diagnostic.setloclist)
 vim.keymap.set("n", "<leader>gf", vim.lsp.buf.format, {})
+vim.keymap.set("n", "<leader>rn", ":IncRename ")
 
 -- Buffers
 vim.keymap.set("n", "<Tab>", ":bnext<CR>")
