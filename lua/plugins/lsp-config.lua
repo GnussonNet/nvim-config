@@ -23,7 +23,6 @@ return {
         ensure_installed = {
           "prettier",
           "eslint_d",
-          "erlang-ls"
         },
       })
     end,
