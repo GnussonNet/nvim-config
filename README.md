@@ -5,7 +5,7 @@ sudo apt install build-essential
 ```
 
 ## Node (for javascript and typescript)
-1. ``` bash
+1. ```bash
     curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.1/install.sh | bash
    ```
 2. ```
@@ -16,16 +16,21 @@ sudo apt install build-essential
     ```
 
 ## Tailwind
-``` bash
+```bash
 npm i -g tailwindcss-language-server neovim prettier eslint_d
 ```
 
 ## Ripgrep
-``` bash
+```bash
 sudo apt-get install ripgrep
 ```
 
 ## Erlang
-``` bash
+```bash
 brew install erlang rebar3
+```
+
+## Image preview
+```bash
+brew install pkg-config
 ```
