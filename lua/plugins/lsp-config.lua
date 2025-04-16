@@ -73,9 +73,6 @@ return {
       lspconfig.cssls.setup({
         capabilities = capabilities,
       })
-      lspconfig.erlangls.setup({
-        capabilities = capabilities,
-      })
     end,
   },
 }
