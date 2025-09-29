@@ -1,6 +1,7 @@
 return {
   'nvim-java/nvim-java',
   event = { "VimEnter" },
+  enabled = false,
   dependencies = {
     'nvim-java/lua-async-await',
     'nvim-java/nvim-java-core',

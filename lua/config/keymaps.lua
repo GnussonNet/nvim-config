@@ -64,7 +64,6 @@ vim.keymap.set("n", "<C-Down>", "<C-w>-")
 -- Terminal
 vim.keymap.set("n", "<leader>t", "<cmd>ToggleTerm size=20 direction=horizontal<cr>")
 vim.keymap.set("t", "<esc>", [[<C-\><C-n>]])
-vim.keymap.set("t", "jk", [[<C-\><C-n>]])
 vim.keymap.set("t", "<C-h>", [[<Cmd>wincmd h<CR>]])
 vim.keymap.set("t", "<C-j>", [[<Cmd>wincmd j<CR>]])
 vim.keymap.set("t", "<C-k>", [[<Cmd>wincmd k<CR>]])
