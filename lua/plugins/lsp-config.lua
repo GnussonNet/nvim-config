@@ -1,78 +1,54 @@
 return {
-  {
-    "williamboman/mason.nvim",
-    event = "VeryLazy",
-    config = function()
-      require("mason").setup({})
-    end,
-  },
-  {
-    "williamboman/mason-lspconfig.nvim",
-    event = "VeryLazy",
-    config = function()
-      require("mason-lspconfig").setup({
-        automatic_installation = false,
-        ensure_installed = { "lua_ls", "tailwindcss", "ts_ls", "html", "cssls" },
-      })
-    end,
-  },
-  {
-    "WhoIsSethDaniel/mason-tool-installer.nvim",
-    config = function()
-      require("mason-tool-installer").setup({
-        ensure_installed = {
-          "prettier",
-          "eslint_d",
-        },
-      })
-    end,
-  },
-  {
-    "nvimtools/none-ls.nvim",
-    event = "VeryLazy",
-    dependencies = {
-      "nvimtools/none-ls-extras.nvim",
-    },
-    config = function()
-      local null_ls = require("null-ls")
+	"neovim/nvim-lspconfig",
 
-      null_ls.setup({
-        sources = {
-          null_ls.builtins.formatting.prettier,
-          require("none-ls.diagnostics.eslint_d")
-        },
-      })
-    end,
-  },
-  {
-    "neovim/nvim-lspconfig",
-    event = "VeryLazy",
-    config = function()
-      local lspconfig = require("lspconfig")
-      local capabilities = require("cmp_nvim_lsp").default_capabilities()
+	dependencies = {
+		"mason-org/mason.nvim",
+		"mason-org/mason-lspconfig.nvim",
+		"WhoIsSethDaniel/mason-tool-installer.nvim",
+		"saghen/blink.cmp",
+	},
 
-      lspconfig.lua_ls.setup({
-        capabilities = capabilities,
-        settings = {
-          Lua = {
-            diagnostics = {
-              globals = { "vim" },
-            },
-          },
-        },
-      })
-      lspconfig.ts_ls.setup({
-        capabilities = capabilities,
-      })
-      lspconfig.tailwindcss.setup({
-        capabilities = capabilities,
-      })
-      lspconfig.html.setup({
-        capabilities = capabilities,
-      })
-      lspconfig.cssls.setup({
-        capabilities = capabilities,
-      })
-    end,
-  },
+	config = function()
+		local mason_servers = {
+			"bashls",
+			"cssls",
+			"html",
+			"jsonls",
+			"lua_ls",
+			"tailwindcss",
+			"ts_ls",
+		}
+
+		local mason_tools = {
+			"eslint_d",
+			"prettierd",
+			"stylua",
+		}
+
+		local servers = {
+			lua_ls = {
+				settings = {
+					Lua = {
+						diagnostics = {
+							globals = { "vim" },
+						},
+					},
+				},
+			},
+		}
+
+		require("mason").setup()
+
+		require("mason-lspconfig").setup({ automatic_installation = false, ensure_installed = mason_servers })
+		require("mason-tool-installer").setup({ ensure_installed = mason_tools })
+
+		local capabilities = vim.lsp.protocol.make_client_capabilities()
+		capabilities = vim.tbl_deep_extend("force", capabilities, require("blink.cmp").get_lsp_capabilities({}, false))
+
+		-- 0.11 fix
+		for server, config in pairs(servers) do
+			config.capabilities = vim.tbl_deep_extend("force", {}, capabilities, config.capabilities or {})
+			vim.lsp.config(server, config)
+		end
+	end,
 }
