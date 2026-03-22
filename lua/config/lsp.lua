@@ -84,13 +84,16 @@ local ts_server = vim.g.lsp_typescript_server or "vtsls"
 
 -- Enable LSP servers for Neovim 0.11+
 vim.lsp.enable({
-	ts_server,
-	"eslint", -- Fallback linter
-	"lua_ls",
-	"rust_analyser",
+  "bashls",
 	"cssls",
+	"eslint",
 	"html",
 	"jsonls",
+	"lua_ls",
+  "pyright",
+	"rust_analyser",
+  "tailwindcss",
+	ts_server,
 })
 
 -- Load Lsp on-demand, e.g: eslint is disable by default

@@ -78,10 +78,8 @@ vim.api.nvim_set_hl(0, "CmpItemKindEnumMember", { fg = "#000000", bg = "#5ba9e5"
 vim.api.nvim_set_hl(0, "CmpItemKindConstant", { fg = "#000000", bg = "#5ba9e5" })
 vim.api.nvim_set_hl(0, "CmpItemKindStruct", { fg = "#000000", bg = "#5ba9e5" })
 vim.api.nvim_set_hl(0, "CmpItemKindEvent", { fg = "#000000", bg = "#5ba9e5" })
-vim.api.nvim_set_hl(0, "CmpItemKindConstant", { fg = "#000000", bg = "#5ba9e5" })
 vim.api.nvim_set_hl(0, "CmpItemKindOperator", { fg = "#000000", bg = "#5ba9e5" })
 vim.api.nvim_set_hl(0, "CmpItemKindTypeParameter", { fg = "#000000", bg = "#5ba9e5" })
-vim.api.nvim_set_hl(0, "CmpItemKindOperator", { fg = "#000000", bg = "#5ba9e5" })
 vim.api.nvim_set_hl(0, "CmpItemKindCopilot", { fg = "#000000", bg = "#5ba9e5" })
 vim.api.nvim_set_hl(0, "PmenuCursor", { fg = "#000000", bg = "#5ba9e5", bold = true })
 -- Make the foreground transparent
@@ -98,21 +96,17 @@ vim.api.nvim_create_autocmd("InsertEnter", {
 		require("blink.cmp").setup({
 			keymap = { preset = "super-tab" },
 			appearance = {
-        cmp_kinds = cmp_kinds,
-				nerd_font_variant = "mono",
+      kind_icons = cmp_kinds,
+      nerd_font_variant = "mono",
 				use_nvim_cmp_as_default = true,
 			},
 			completion = {
 				documentation = {
           auto_show = false,
-          border = "single",
-          winhighlight = "Normal:CmpDoc,FloatBorder:CmpDocBorder",
-          side_padding = 1,
         },
         menu = {
           border = 'single',
           winhighlight = 'Normal:Pmenu,FloatBorder:Pborder,Search:None,CursorLine:PmenuCursor',
-          side_padding = 1,
           auto_show = true,
           draw = {
             columns = {
