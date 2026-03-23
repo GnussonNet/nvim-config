@@ -80,20 +80,17 @@ vim.api.nvim_create_autocmd("LspAttach", {
 	end,
 })
 
-local ts_server = vim.g.lsp_typescript_server or "vtsls"
-
 -- Enable LSP servers for Neovim 0.11+
 vim.lsp.enable({
   "bashls",
-	"cssls",
-	"eslint",
-	"html",
+  "cssls",
+  "dartls",
+  "html",
 	"jsonls",
 	"lua_ls",
   "pyright",
-	"rust_analyser",
   "tailwindcss",
-	ts_server,
+  "ts_ls",
 })
 
 -- Load Lsp on-demand, e.g: eslint is disable by default
