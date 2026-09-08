@@ -83,6 +83,7 @@ vim.api.nvim_create_autocmd("LspAttach", {
 -- Enable LSP servers for Neovim 0.11+
 vim.lsp.enable({
   "bashls",
+  "clangd",
   "cssls",
   "dartls",
   "html",
