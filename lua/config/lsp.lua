@@ -6,6 +6,14 @@ end
 local default_keymaps = {
 	{ keys = "<leader>ca", func = vim.lsp.buf.code_action, desc = "Code Actions" },
 	{
+		keys = "<leader>cf",
+		func = function()
+			vim.lsp.buf.format()
+		end,
+		desc = "Format Buffer",
+		has = "documentFormattingProvider",
+	},
+	{
 		keys = "<leader>cl",
 		func = function()
 			if vim.fn.exists(":LspOxlintFixAll") > 0 then
