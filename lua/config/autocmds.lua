@@ -189,3 +189,15 @@ vim.api.nvim_create_autocmd({ "BufRead", "BufNewFile" }, {
 		vim.opt_local.filetype = "embedded_template"
 	end,
 })
+
+-- GO lang format on save
+vim.api.nvim_create_autocmd("BufWritePre", {
+  pattern = "*.go",
+  callback = function(args)
+    vim.lsp.buf.format({
+      bufnr = args.buf,
+      async = false,
+      timeout_ms = 3000,
+    })
+  end,
+})

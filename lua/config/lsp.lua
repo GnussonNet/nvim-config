@@ -100,6 +100,7 @@ vim.lsp.enable({
   "pyright",
   "tailwindcss",
   "ts_ls",
+  "gopls",
 })
 
 -- Load Lsp on-demand, e.g: eslint is disable by default
