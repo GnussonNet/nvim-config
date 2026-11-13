@@ -1,4 +1,5 @@
 require("plugins.blink")
+require("plugins.copilot")
 require("plugins.dap")
 require("plugins.git")
 require("plugins.markdown")
